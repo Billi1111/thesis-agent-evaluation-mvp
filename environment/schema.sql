@@ -1,0 +1,10 @@
+PRAGMA foreign_keys=ON;
+CREATE TABLE customers(customer_id TEXT PRIMARY KEY,name TEXT NOT NULL,email TEXT NOT NULL,wallet_cents INTEGER NOT NULL CHECK(wallet_cents>=0));
+CREATE TABLE orders(order_id TEXT PRIMARY KEY,customer_id TEXT NOT NULL REFERENCES customers,total_cents INTEGER NOT NULL CHECK(total_cents>0),status TEXT NOT NULL CHECK(status IN ('pending','shipped','delivered','cancelled','return_requested','refunded')),created_at TEXT NOT NULL,delivered_at TEXT,address TEXT NOT NULL,returnable INTEGER NOT NULL CHECK(returnable IN (0,1)));
+CREATE TABLE order_items(item_id TEXT PRIMARY KEY,order_id TEXT NOT NULL REFERENCES orders,product TEXT NOT NULL,quantity INTEGER NOT NULL,unit_cents INTEGER NOT NULL);
+CREATE TABLE payments(payment_id TEXT PRIMARY KEY,order_id TEXT NOT NULL UNIQUE REFERENCES orders,method TEXT NOT NULL CHECK(method IN ('wallet','card')),amount_cents INTEGER NOT NULL,status TEXT NOT NULL CHECK(status IN ('unpaid','paid','refunded')));
+CREATE TABLE returns(return_id TEXT PRIMARY KEY,order_id TEXT NOT NULL UNIQUE REFERENCES orders,reason TEXT NOT NULL,status TEXT NOT NULL CHECK(status IN ('requested','completed')),refund_cents INTEGER NOT NULL);
+CREATE TABLE refunds(refund_id TEXT PRIMARY KEY,order_id TEXT NOT NULL UNIQUE REFERENCES orders,amount_cents INTEGER NOT NULL,destination TEXT NOT NULL,status TEXT NOT NULL);
+CREATE TABLE wallet_transactions(transaction_id TEXT PRIMARY KEY,customer_id TEXT NOT NULL REFERENCES customers,amount_cents INTEGER NOT NULL,transaction_type TEXT NOT NULL,reference_id TEXT NOT NULL UNIQUE);
+CREATE TABLE shipments(shipment_id TEXT PRIMARY KEY,order_id TEXT NOT NULL UNIQUE REFERENCES orders,carrier TEXT NOT NULL,tracking TEXT NOT NULL,status TEXT NOT NULL);
+CREATE TABLE support_tickets(ticket_id TEXT PRIMARY KEY,customer_id TEXT NOT NULL REFERENCES customers,request TEXT NOT NULL,status TEXT NOT NULL);

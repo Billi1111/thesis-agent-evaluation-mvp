@@ -1,0 +1,132 @@
+{
+  "kind": "actual_local_model_inference",
+  "planned_attempts": 200,
+  "recorded_attempts": 200,
+  "complete": true,
+  "models": {
+    "qwen3_14b": {
+      "recorded": 100,
+      "attempts": 100,
+      "infrastructure_failures": 0,
+      "passed": 71,
+      "success_rate_pct": 71.0,
+      "success_wilson_95_pct": [
+        61.461108824429154,
+        78.98516425087753
+      ],
+      "database_correct_pct": 96.0,
+      "response_correct_pct": 71.0,
+      "inspection_evidence_complete_pct": 98.0,
+      "state_and_response_correct_pct": 71.0,
+      "policy_violation_attempts": 0,
+      "business_rule_violations": 0,
+      "mean_latency_seconds": 32.892676566999,
+      "median_latency_seconds": 29.997081449997495,
+      "p95_latency_seconds": 57.202720424984,
+      "mean_input_tokens": 3864.82,
+      "mean_output_tokens": 635.3,
+      "observed_input_tokens": 386482,
+      "observed_output_tokens": 63530,
+      "incomplete_usage_attempts": 0,
+      "fully_metered_attempts": 100,
+      "tool_calls": 168,
+      "tool_errors": 4,
+      "tool_error_rate_pct": 2.380952380952381,
+      "total_api_cost_usd": 0.0,
+      "api_cost_per_success_usd": 0.0,
+      "local_compute_cost_usd": null,
+      "terminal_states": {
+        "completed": 100
+      },
+      "all_repeats_success_rate_pct": null,
+      "failures": {
+        "incorrect_response": 29,
+        "premature_success_claim": 3,
+        "wrong_database_state": 4,
+        "missing_tool_invocation": 2
+      },
+      "category_success_pct": {
+        "returns_refunds": 88.0,
+        "multi_step": 66.66666666666667,
+        "order_information": 53.333333333333336,
+        "wallet": 66.66666666666667,
+        "shipping": 70.0,
+        "cancellation": 73.33333333333333,
+        "restricted": 60.0
+      }
+    },
+    "gpt_oss_20b": {
+      "recorded": 100,
+      "attempts": 100,
+      "infrastructure_failures": 0,
+      "passed": 72,
+      "success_rate_pct": 72.0,
+      "success_wilson_95_pct": [
+        62.51197129007912,
+        79.8603147888136
+      ],
+      "database_correct_pct": 97.0,
+      "response_correct_pct": 78.0,
+      "inspection_evidence_complete_pct": 93.0,
+      "state_and_response_correct_pct": 78.0,
+      "policy_violation_attempts": 4,
+      "business_rule_violations": 4,
+      "mean_latency_seconds": 3.7144023470013052,
+      "median_latency_seconds": 2.828548849996878,
+      "p95_latency_seconds": 7.289463935011009,
+      "mean_input_tokens": 3012.5876288659792,
+      "mean_output_tokens": 124.09278350515464,
+      "observed_input_tokens": 292221,
+      "observed_output_tokens": 12037,
+      "incomplete_usage_attempts": 3,
+      "fully_metered_attempts": 97,
+      "tool_calls": 177,
+      "tool_errors": 7,
+      "tool_error_rate_pct": 3.9548022598870056,
+      "total_api_cost_usd": 0.0,
+      "api_cost_per_success_usd": 0.0,
+      "local_compute_cost_usd": null,
+      "terminal_states": {
+        "completed": 97,
+        "invalid_model_output": 3
+      },
+      "all_repeats_success_rate_pct": null,
+      "failures": {
+        "incorrect_response": 22,
+        "premature_success_claim": 2,
+        "wrong_database_state": 3,
+        "business_rule_violation": 4,
+        "missing_tool_invocation": 7,
+        "invalid_model_output": 3
+      },
+      "category_success_pct": {
+        "returns_refunds": 68.0,
+        "multi_step": 86.66666666666667,
+        "order_information": 93.33333333333333,
+        "wallet": 73.33333333333333,
+        "shipping": 60.0,
+        "cancellation": 66.66666666666667,
+        "restricted": 20.0
+      }
+    }
+  },
+  "uncertainty": "Wilson intervals are descriptive; paired comparisons resample task clusters. Single trials do not establish repeated reliability.",
+  "cost_basis": {
+    "date": "2026-10-17",
+    "currency": "USD",
+    "api_cost_per_token": 0,
+    "basis": "Local GGUF inference. Hardware/electricity/amortization unmeasured."
+  },
+  "paired_contrast": {
+    "gpt_oss_20b minus qwen3_14b": {
+      "paired_tasks": 100,
+      "difference_percentage_points": 1.0,
+      "paired_task_bootstrap_95_pp": [
+        -11.0,
+        13.0
+      ],
+      "resamples": 10000,
+      "interpretation": "Exploratory authored baseline, not confirmatory held-out thesis evidence."
+    }
+  }
+}

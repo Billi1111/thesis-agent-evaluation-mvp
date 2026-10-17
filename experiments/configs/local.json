@@ -1,0 +1,27 @@
+{
+  "experiment": "baseline-v1",
+  "benchmark": "benchmark/tickets.jsonl",
+  "harness": "agent/system_prompt.txt",
+  "settings": {
+    "temperature": 0,
+    "seed": 42,
+    "max_steps": 12,
+    "max_tool_calls": 16,
+    "max_output_tokens": 2048,
+    "context_tokens": 8192,
+    "call_timeout_seconds": 180,
+    "task_timeout_seconds": 600,
+    "concurrency": 1,
+    "infrastructure_retries": 0
+  },
+  "pricing": {
+    "date": "2026-10-17",
+    "currency": "USD",
+    "api_cost_per_token": 0,
+    "basis": "Local device inference; no paid API. Hardware, electricity and amortization unmeasured."
+  },
+  "models": [
+    {"label":"qwen3_14b", "backend":"ollama", "model":"qwen3:14b", "base_url":"http://127.0.0.1:11434"},
+    {"label":"gpt_oss_20b", "backend":"ollama", "model":"gpt-oss:20b", "base_url":"http://127.0.0.1:11434"}
+  ]
+}

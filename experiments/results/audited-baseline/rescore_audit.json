@@ -1,0 +1,28 @@
+{
+  "revision": "checker-v3-target-context",
+  "source": "experiments\\results\\baseline",
+  "changed_verdicts": [
+    {
+      "model": "qwen3_14b",
+      "ticket": "TICKET_099",
+      "original_passed": false,
+      "corrected_passed": true,
+      "original_response_errors": [
+        "unsupported_fact:status"
+      ],
+      "corrected_response_errors": []
+    },
+    {
+      "model": "qwen3_14b",
+      "ticket": "TICKET_096",
+      "original_passed": false,
+      "corrected_passed": true,
+      "original_response_errors": [
+        "unsupported_fact:status"
+      ],
+      "corrected_response_errors": []
+    }
+  ],
+  "raw_records_and_traces_modified": false,
+  "additional_model_calls": 0
+}

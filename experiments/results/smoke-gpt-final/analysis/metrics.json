@@ -1,0 +1,58 @@
+{
+  "kind": "actual_local_model_inference",
+  "planned_attempts": 3,
+  "recorded_attempts": 3,
+  "complete": true,
+  "models": {
+    "gpt_oss_20b": {
+      "recorded": 3,
+      "attempts": 3,
+      "infrastructure_failures": 0,
+      "passed": 1,
+      "success_rate_pct": 33.333333333333336,
+      "success_wilson_95_pct": [
+        6.149194472039871,
+        79.23403991979453
+      ],
+      "database_correct_pct": 100.0,
+      "response_correct_pct": 33.333333333333336,
+      "inspection_evidence_complete_pct": 100.0,
+      "state_and_response_correct_pct": 33.333333333333336,
+      "policy_violation_attempts": 0,
+      "business_rule_violations": 0,
+      "mean_latency_seconds": 4.951731699984521,
+      "median_latency_seconds": 3.2413981999852695,
+      "p95_latency_seconds": 8.225319469984969,
+      "mean_input_tokens": 3192.6666666666665,
+      "mean_output_tokens": 149.33333333333334,
+      "observed_input_tokens": 9578,
+      "observed_output_tokens": 448,
+      "incomplete_usage_attempts": 0,
+      "tool_calls": 6,
+      "tool_errors": 1,
+      "tool_error_rate_pct": 16.666666666666668,
+      "total_api_cost_usd": 0.0,
+      "api_cost_per_success_usd": 0.0,
+      "local_compute_cost_usd": null,
+      "terminal_states": {
+        "completed": 3
+      },
+      "all_repeats_success_rate_pct": null,
+      "failures": {
+        "incorrect_response": 2
+      },
+      "category_success_pct": {
+        "returns_refunds": 0.0,
+        "order_information": 100.0,
+        "restricted": 0.0
+      }
+    }
+  },
+  "uncertainty": "Wilson intervals are descriptive; paired comparisons resample task clusters. Single trials do not establish repeated reliability.",
+  "cost_basis": {
+    "date": "2026-10-17",
+    "currency": "USD",
+    "api_cost_per_token": 0,
+    "basis": "Local GGUF inference. Hardware/electricity/amortization unmeasured."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "actual_model_attempts": 200,
+  "models": {
+    "gpt_oss_20b": {
+      "records": 100,
+      "unique_tickets": 100,
+      "terminal_states": {
+        "completed": 97,
+        "invalid_model_output": 3
+      }
+    },
+    "qwen3_14b": {
+      "records": 100,
+      "unique_tickets": 100,
+      "terminal_states": {
+        "completed": 100
+      }
+    }
+  },
+  "identical_initial_state_pairs": 100,
+  "all_recorded_assessments_revalidated": true,
+  "current_scoring_sources_match_manifest": true,
+  "model_facing_sources_unchanged_since_execution": true,
+  "wallet_ledger_refund_and_unrelated_entity_invariant_violations": [],
+  "note": "These independent accounting checks do not replace the full task/response/policy score."
+}

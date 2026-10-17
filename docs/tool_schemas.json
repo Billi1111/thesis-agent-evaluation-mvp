@@ -1,0 +1,218 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "get_customer",
+      "description": "Inspect the authenticated customer, including wallet balance in cents.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_order",
+      "description": "Inspect your order, payment, line items and shipment. Does not mutate state.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "order_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "order_id"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "check_return_eligibility",
+      "description": "Check whether a delivered order is returnable within the 30-day window.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "order_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "order_id"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "create_return",
+      "description": "Request a full return of an eligible delivered order. Does not refund it.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "order_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "order_id",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "process_refund",
+      "description": "Refund a paid cancelled order or requested return exactly once to the original payment method. Amount is determined by the backend.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "order_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "order_id"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "cancel_order",
+      "description": "Cancel a pending order. Paid orders still need process_refund afterwards.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "order_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "order_id"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_wallet",
+      "description": "Get your wallet balance in cents and all wallet transactions.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "pay_with_wallet",
+      "description": "Pay a pending unpaid order in full from your wallet if sufficient funds exist.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "order_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "order_id"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "update_shipping_address",
+      "description": "Change a pending order address before shipment; use the exact complete address supplied by the customer.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "order_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "address": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "order_id",
+          "address"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "create_support_ticket",
+      "description": "Create an open support ticket using a concise description of the requested escalation.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "request": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "request"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_refund_status",
+      "description": "Inspect a completed refund for your order, or return null if absent.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "order_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "order_id"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+]

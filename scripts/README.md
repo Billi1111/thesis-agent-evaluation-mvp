@@ -1,0 +1,3 @@
+The benchmark launcher uses the existing llama.cpp executable and GGUF files without changing the original launchers or weights. It owns only a saved process on dedicated port 8091, uses hidden background windows, and records its command, build, model path, size, and SHA256 in `experiments/runtime`. The normal llama.cpp chat port remains 8080. Avoid simultaneously loading another large model on the same GPU during timing experiments.
+
+`Start-Benchmark-Model.ps1 -Stop` stops only the benchmark's verified process. `Run-Baseline.ps1` starts one model at a time and releases it in a finally block. Override `LlamaRoot` or `QwenPath` on the start script if the existing installation moves; update model configuration if aliases change. No downloads are performed.

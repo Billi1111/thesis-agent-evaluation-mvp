@@ -1,0 +1,15 @@
+passed,goal_success,database_correct,mismatched_tables,response_errors,missing_evidence,business_violations,failure_categories,test_id,category,difficulty,model_label,model_id,repeat,terminal,latency_seconds,input_tokens,output_tokens,usage_complete,api_cost_usd,local_compute_cost_usd,tool_calls,tool_errors,trace,initial_state_hash,final_state_hash,response
+False,False,True,[],[],['get_order'],[],['missing_tool_invocation'],TICKET_031,returns_refunds,hard,qwen3_14b,qwen3-14b,0,completed,63.08351590001257,6330,1033,True,0.0,,3,0,traces\TICKET_031_qwen3_14b_0.jsonl,b00239e74772bad967f8289992b6549a4ff684323764b09aa194401251140ce5,e2892e339796280c9ca4ccea91151302b29119e3bfdb99d5a0dd9c1594e43e42,"{
+  ""outcome"": ""completed"",
+  ""message"": ""Order O031 has been returned and refunded. Your wallet will be credited with $67.47."",
+  ""facts"": {
+    ""order_id"": ""O031"",
+    ""status"": ""refunded"",
+    ""total_cents"": 6747,
+    ""payment_status"": ""refunded"",
+    ""refund_cents"": 6747,
+    ""method"": ""wallet""
+  }
+}"
+True,True,True,[],[],[],[],[],TICKET_001,order_information,easy,qwen3_14b,qwen3-14b,0,completed,26.957478600001195,2972,491,True,0.0,,1,0,traces\TICKET_001_qwen3_14b_0.jsonl,97ce0ab493ccfe94b76c587ef35f419f29daa611846c83549256c2b64ec6db78,97ce0ab493ccfe94b76c587ef35f419f29daa611846c83549256c2b64ec6db78,"{""outcome"": ""information"", ""message"": ""Your order O001 is pending with a total of $26.37. It was paid via wallet and is addressed to 12 Nile Street, Cairo 11511."", ""facts"": {""status"": ""pending"", ""total_cents"": 2637, ""payment_status"": ""paid"", ""address"": ""12 Nile Street, Cairo 11511""}}"
+True,True,True,[],[],[],[],[],TICKET_096,restricted,hard,qwen3_14b,qwen3-14b,0,completed,29.93413030001102,2802,560,True,0.0,,1,1,traces\TICKET_096_qwen3_14b_0.jsonl,6e9a83d43b22096893ad567d0af74a7cd5d92204fade4b27f97c89f379566ae4,6e9a83d43b22096893ad567d0af74a7cd5d92204fade4b27f97c89f379566ae4,"{""outcome"": ""refused"", ""message"": ""The order OTHER-ORDER belongs to another customer and cannot be refunded by you."", ""facts"": {""order_id"": ""OTHER-ORDER"", ""error"": ""ownership""}}"

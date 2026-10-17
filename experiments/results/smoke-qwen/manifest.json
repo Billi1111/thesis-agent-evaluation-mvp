@@ -1,0 +1,175 @@
+{
+  "created_at_utc": "2026-10-17T12:51:05.958693+00:00",
+  "config": {
+    "experiment": "llamacpp-baseline-v1",
+    "benchmark": "benchmark/tickets.jsonl",
+    "harness": "agent/system_prompt.txt",
+    "settings": {
+      "temperature": 0,
+      "seed": 42,
+      "max_steps": 12,
+      "max_tool_calls": 16,
+      "max_output_tokens": 2048,
+      "context_tokens": 8192,
+      "call_timeout_seconds": 180,
+      "task_timeout_seconds": 600,
+      "concurrency": 1,
+      "infrastructure_retries": 0,
+      "server_reasoning_effort": "low",
+      "server_reasoning_budget": 256,
+      "model_order": "sequential blocks due to one-GPU capacity"
+    },
+    "pricing": {
+      "date": "2026-10-17",
+      "currency": "USD",
+      "api_cost_per_token": 0,
+      "basis": "Local GGUF inference. Hardware/electricity/amortization unmeasured."
+    },
+    "models": [
+      {
+        "label": "qwen3_14b",
+        "backend": "openai_compatible",
+        "model": "qwen3-14b",
+        "base_url": "http://127.0.0.1:8091/v1",
+        "api_key": "local",
+        "quantization": "Q4_K_M"
+      },
+      {
+        "label": "gpt_oss_20b",
+        "backend": "openai_compatible",
+        "model": "gpt-oss-20b",
+        "base_url": "http://127.0.0.1:8091/v1",
+        "api_key": "local",
+        "quantization": "UD-Q4_K_XL"
+      }
+    ]
+  },
+  "config_hash": "8e7dd83d167121f21bd51ca2fc0bebdd6f5f991d58fb0c8b699e40faaac15ac8",
+  "benchmark_hash": "109f6b28a96f0c901e3492e7e9b21118e7888cc3502ab3b31f05c2c761e1976f",
+  "harness_hash": "2131a8bfbfd01b87be4d11c5355782f6a6d671127be3efb38aa45ec23da2e351",
+  "tools_hash": "513ea39311003fc744c0184bbf42b5159ab5da9917bf1f2c5857e89fd5748ed1",
+  "source_hashes": {
+    "agent\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "agent\\model.py": "7c289c0fe2a38e368f30fdcfba343e1612b24e7d38fd9775bafd7bd96c3f9913",
+    "agent\\system_prompt.txt": "2131a8bfbfd01b87be4d11c5355782f6a6d671127be3efb38aa45ec23da2e351",
+    "agent\\tool_calling_agent.py": "4ee6654367f9e9780339893f3725c2fefa0696f399d6dd0ff3d4e892bdb60410",
+    "agent\\tools.py": "c27e2fd8e34f222a6e05e119f68d600e48d6478899d76d2f1382c131a1ccd9f8",
+    "agent\\upstream_tool_calling_agent.py.txt": "76baa42d2f9f218163d91e624f8ef28be4bac84ac8f77eddbd29263dd6e55752",
+    "environment\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "environment\\backend.py": "97fb094d83360594b74d8b1fe422193ea3c7ed42fc5bf5e769e55ce5be8362ec",
+    "environment\\schema.sql": "99deae13ff97cf5b2ab5d683db0dcb1dba9cb6c9d9cc72866790d39dc06776cb",
+    "benchmark\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "benchmark\\generate.py": "931149a6c897a8074014a1b9b32353c731237792b1329bf2327932f47f6c222a",
+    "benchmark\\tickets.jsonl": "109f6b28a96f0c901e3492e7e9b21118e7888cc3502ab3b31f05c2c761e1976f",
+    "evaluation\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation\\assertions.py": "14acaf4b335c2a7cfff0d51f5576fbeea5bed26be3df80dc5f52ae415936130e",
+    "evaluation\\model_config.py": "e80a41caee6a75f223972415ea124a5d914915e1b5c80af4748999945c4bd8be",
+    "evaluation\\runner.py": "d09624719614e3ae78bd26237adfc98564e76b79fa1dc184b95e303d09e0d72f"
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "annotated-types": "0.8.0",
+    "anyio": "4.15.1",
+    "attrs": "26.1.0",
+    "colorama": "0.4.6",
+    "contourpy": "1.4.0",
+    "cycler": "0.12.1",
+    "fonttools": "4.67.0",
+    "h11": "0.16.0",
+    "httpcore2": "2.13.1",
+    "httpx2": "2.13.1",
+    "idna": "3.20",
+    "iniconfig": "2.3.1",
+    "jiter": "0.17.0",
+    "jsonschema": "4.26.0",
+    "jsonschema-specifications": "2025.9.1",
+    "kiwisolver": "1.5.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "openai": "3.33.0",
+    "packaging": "26.3",
+    "pillow": "13.0.0",
+    "pluggy": "1.7.0",
+    "pydantic": "2.14.1",
+    "pydantic_core": "2.50.1",
+    "Pygments": "2.21.0",
+    "pyparsing": "3.3.3",
+    "pytest": "9.1.1",
+    "python-dateutil": "2.9.0.post0",
+    "python-dotenv": "1.2.4",
+    "referencing": "0.37.0",
+    "rpds-py": "2026.9.1",
+    "six": "1.17.0",
+    "sniffio": "1.3.1",
+    "truststore": "0.10.5",
+    "typing_extensions": "4.16.0",
+    "typing-inspection": "0.4.4"
+  },
+  "case_ids": [
+    "TICKET_001",
+    "TICKET_031",
+    "TICKET_096"
+  ],
+  "model_labels": [
+    "qwen3_14b"
+  ],
+  "repeats": 1,
+  "kind": "actual_local_model_inference",
+  "selected_agent_commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+  "server_inventory": {
+    "http://127.0.0.1:8091/v1": {
+      "models": [
+        {
+          "name": "qwen3-14b",
+          "model": "qwen3-14b",
+          "modified_at": "",
+          "size": "",
+          "digest": "",
+          "type": "model",
+          "description": "",
+          "tags": [
+            ""
+          ],
+          "capabilities": [
+            "completion"
+          ],
+          "parameters": "",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "",
+            "families": [
+              ""
+            ],
+            "parameter_size": "",
+            "quantization_level": ""
+          }
+        }
+      ],
+      "object": "list",
+      "data": [
+        {
+          "id": "qwen3-14b",
+          "aliases": [
+            "qwen3-14b"
+          ],
+          "tags": [],
+          "object": "model",
+          "created": 1792241466,
+          "owned_by": "llamacpp",
+          "meta": {
+            "vocab_type": true,
+            "n_vocab": 151936,
+            "n_ctx": 8192,
+            "n_ctx_train": 40960,
+            "n_embd": 5120,
+            "n_params": 14768307200,
+            "size": 8995793920,
+            "ftype": "Q4_K - Medium"
+          }
+        }
+      ]
+    }
+  }
+}
